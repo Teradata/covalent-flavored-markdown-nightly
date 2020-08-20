@@ -1,0 +1,8 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+export { TdFlavoredMarkdownButtonComponent, TdFlavoredMarkdownContainerDirective, TdFlavoredMarkdownComponent } from './flavored-markdown.component';
+export { CovalentFlavoredMarkdownModule } from './flavored-markdown.module';
+export { TdFlavoredMarkdownLoaderComponent } from './flavored-markdown-loader/flavored-markdown-loader.component';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljX2FwaS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL0Bjb3ZhbGVudC9mbGF2b3JlZC1tYXJrZG93bi8iLCJzb3VyY2VzIjpbInB1YmxpY19hcGkudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztBQUFBLHFIQUFjLCtCQUErQixDQUFDO0FBQzlDLCtDQUFjLDRCQUE0QixDQUFDO0FBQzNDLGtEQUFjLCtEQUErRCxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0ICogZnJvbSAnLi9mbGF2b3JlZC1tYXJrZG93bi5jb21wb25lbnQnO1xuZXhwb3J0ICogZnJvbSAnLi9mbGF2b3JlZC1tYXJrZG93bi5tb2R1bGUnO1xuZXhwb3J0ICogZnJvbSAnLi9mbGF2b3JlZC1tYXJrZG93bi1sb2FkZXIvZmxhdm9yZWQtbWFya2Rvd24tbG9hZGVyLmNvbXBvbmVudCc7XG4iXX0=
