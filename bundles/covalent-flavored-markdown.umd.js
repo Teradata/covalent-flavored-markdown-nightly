@@ -1,53 +1,54 @@
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core'), require('@angular/material/checkbox'), require('@covalent/highlight'), require('@covalent/markdown'), require('@covalent/core/data-table'), require('@angular/common'), require('@angular/material/list'), require('@angular/material/progress-bar'), require('@angular/material/button')) :
     typeof define === 'function' && define.amd ? define('@covalent/flavored-markdown', ['exports', '@angular/core', '@angular/material/checkbox', '@covalent/highlight', '@covalent/markdown', '@covalent/core/data-table', '@angular/common', '@angular/material/list', '@angular/material/progress-bar', '@angular/material/button'], factory) :
-    (global = global || self, factory((global.covalent = global.covalent || {}, global.covalent['flavored-markdown'] = {}), global.ng.core, global.ng.material.checkbox, global.covalent.highlight, global.covalent.markdown, global.covalent.core['data-table'], global.ng.common, global.ng.material.list, global.ng.material.progressBar, global.ng.material.button));
+    (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global.covalent = global.covalent || {}, global.covalent['flavored-markdown'] = {}), global.ng.core, global.ng.material.checkbox, global.covalent.highlight, global.covalent.markdown, global.covalent.core['data-table'], global.ng.common, global.ng.material.list, global.ng.material.progressBar, global.ng.material.button));
 }(this, (function (exports, core, checkbox, highlight, markdown, dataTable, common, list, progressBar, button) { 'use strict';
 
     /*! *****************************************************************************
-    Copyright (c) Microsoft Corporation. All rights reserved.
-    Licensed under the Apache License, Version 2.0 (the "License"); you may not use
-    this file except in compliance with the License. You may obtain a copy of the
-    License at http://www.apache.org/licenses/LICENSE-2.0
+    Copyright (c) Microsoft Corporation.
 
-    THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-    KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
-    WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
-    MERCHANTABLITY OR NON-INFRINGEMENT.
+    Permission to use, copy, modify, and/or distribute this software for any
+    purpose with or without fee is hereby granted.
 
-    See the Apache Version 2.0 License for specific language governing permissions
-    and limitations under the License.
+    THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+    REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+    AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+    INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+    LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+    OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+    PERFORMANCE OF THIS SOFTWARE.
     ***************************************************************************** */
     /* global Reflect, Promise */
-
-    var extendStatics = function(d, b) {
+    var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b)
+                if (Object.prototype.hasOwnProperty.call(b, p))
+                    d[p] = b[p]; };
         return extendStatics(d, b);
     };
-
     function __extends(d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     }
-
-    var __assign = function() {
+    var __assign = function () {
         __assign = Object.assign || function __assign(t) {
             for (var s, i = 1, n = arguments.length; i < n; i++) {
                 s = arguments[i];
-                for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+                for (var p in s)
+                    if (Object.prototype.hasOwnProperty.call(s, p))
+                        t[p] = s[p];
             }
             return t;
         };
         return __assign.apply(this, arguments);
     };
-
     function __rest(s, e) {
         var t = {};
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-            t[p] = s[p];
+        for (var p in s)
+            if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+                t[p] = s[p];
         if (s != null && typeof Object.getOwnPropertySymbols === "function")
             for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
                 if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
@@ -55,161 +56,247 @@
             }
         return t;
     }
-
     function __decorate(decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-        if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-        else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+        if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
+            r = Reflect.decorate(decorators, target, key, desc);
+        else
+            for (var i = decorators.length - 1; i >= 0; i--)
+                if (d = decorators[i])
+                    r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     }
-
     function __param(paramIndex, decorator) {
-        return function (target, key) { decorator(target, key, paramIndex); }
+        return function (target, key) { decorator(target, key, paramIndex); };
     }
-
     function __metadata(metadataKey, metadataValue) {
-        if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(metadataKey, metadataValue);
+        if (typeof Reflect === "object" && typeof Reflect.metadata === "function")
+            return Reflect.metadata(metadataKey, metadataValue);
     }
-
     function __awaiter(thisArg, _arguments, P, generator) {
         function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
         return new (P || (P = Promise))(function (resolve, reject) {
-            function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-            function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+            function fulfilled(value) { try {
+                step(generator.next(value));
+            }
+            catch (e) {
+                reject(e);
+            } }
+            function rejected(value) { try {
+                step(generator["throw"](value));
+            }
+            catch (e) {
+                reject(e);
+            } }
             function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
             step((generator = generator.apply(thisArg, _arguments || [])).next());
         });
     }
-
     function __generator(thisArg, body) {
-        var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-        return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+        var _ = { label: 0, sent: function () { if (t[0] & 1)
+                throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+        return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function () { return this; }), g;
         function verb(n) { return function (v) { return step([n, v]); }; }
         function step(op) {
-            if (f) throw new TypeError("Generator is already executing.");
-            while (_) try {
-                if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-                if (y = 0, t) op = [op[0] & 2, t.value];
-                switch (op[0]) {
-                    case 0: case 1: t = op; break;
-                    case 4: _.label++; return { value: op[1], done: false };
-                    case 5: _.label++; y = op[1]; op = [0]; continue;
-                    case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                    default:
-                        if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                        if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                        if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                        if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                        if (t[2]) _.ops.pop();
-                        _.trys.pop(); continue;
+            if (f)
+                throw new TypeError("Generator is already executing.");
+            while (_)
+                try {
+                    if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done)
+                        return t;
+                    if (y = 0, t)
+                        op = [op[0] & 2, t.value];
+                    switch (op[0]) {
+                        case 0:
+                        case 1:
+                            t = op;
+                            break;
+                        case 4:
+                            _.label++;
+                            return { value: op[1], done: false };
+                        case 5:
+                            _.label++;
+                            y = op[1];
+                            op = [0];
+                            continue;
+                        case 7:
+                            op = _.ops.pop();
+                            _.trys.pop();
+                            continue;
+                        default:
+                            if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+                                _ = 0;
+                                continue;
+                            }
+                            if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) {
+                                _.label = op[1];
+                                break;
+                            }
+                            if (op[0] === 6 && _.label < t[1]) {
+                                _.label = t[1];
+                                t = op;
+                                break;
+                            }
+                            if (t && _.label < t[2]) {
+                                _.label = t[2];
+                                _.ops.push(op);
+                                break;
+                            }
+                            if (t[2])
+                                _.ops.pop();
+                            _.trys.pop();
+                            continue;
+                    }
+                    op = body.call(thisArg, _);
                 }
-                op = body.call(thisArg, _);
-            } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-            if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+                catch (e) {
+                    op = [6, e];
+                    y = 0;
+                }
+                finally {
+                    f = t = 0;
+                }
+            if (op[0] & 5)
+                throw op[1];
+            return { value: op[0] ? op[1] : void 0, done: true };
         }
     }
-
-    function __exportStar(m, exports) {
-        for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+    var __createBinding = Object.create ? (function (o, m, k, k2) {
+        if (k2 === undefined)
+            k2 = k;
+        Object.defineProperty(o, k2, { enumerable: true, get: function () { return m[k]; } });
+    }) : (function (o, m, k, k2) {
+        if (k2 === undefined)
+            k2 = k;
+        o[k2] = m[k];
+    });
+    function __exportStar(m, o) {
+        for (var p in m)
+            if (p !== "default" && !Object.prototype.hasOwnProperty.call(o, p))
+                __createBinding(o, m, p);
     }
-
     function __values(o) {
         var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
-        if (m) return m.call(o);
-        if (o && typeof o.length === "number") return {
-            next: function () {
-                if (o && i >= o.length) o = void 0;
-                return { value: o && o[i++], done: !o };
-            }
-        };
+        if (m)
+            return m.call(o);
+        if (o && typeof o.length === "number")
+            return {
+                next: function () {
+                    if (o && i >= o.length)
+                        o = void 0;
+                    return { value: o && o[i++], done: !o };
+                }
+            };
         throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
     }
-
     function __read(o, n) {
         var m = typeof Symbol === "function" && o[Symbol.iterator];
-        if (!m) return o;
+        if (!m)
+            return o;
         var i = m.call(o), r, ar = [], e;
         try {
-            while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+            while ((n === void 0 || n-- > 0) && !(r = i.next()).done)
+                ar.push(r.value);
         }
-        catch (error) { e = { error: error }; }
+        catch (error) {
+            e = { error: error };
+        }
         finally {
             try {
-                if (r && !r.done && (m = i["return"])) m.call(i);
+                if (r && !r.done && (m = i["return"]))
+                    m.call(i);
             }
-            finally { if (e) throw e.error; }
+            finally {
+                if (e)
+                    throw e.error;
+            }
         }
         return ar;
     }
-
     function __spread() {
         for (var ar = [], i = 0; i < arguments.length; i++)
             ar = ar.concat(__read(arguments[i]));
         return ar;
     }
-
     function __spreadArrays() {
-        for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+        for (var s = 0, i = 0, il = arguments.length; i < il; i++)
+            s += arguments[i].length;
         for (var r = Array(s), k = 0, i = 0; i < il; i++)
             for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
                 r[k] = a[j];
         return r;
-    };
-
+    }
+    ;
     function __await(v) {
         return this instanceof __await ? (this.v = v, this) : new __await(v);
     }
-
     function __asyncGenerator(thisArg, _arguments, generator) {
-        if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+        if (!Symbol.asyncIterator)
+            throw new TypeError("Symbol.asyncIterator is not defined.");
         var g = generator.apply(thisArg, _arguments || []), i, q = [];
         return i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i;
-        function verb(n) { if (g[n]) i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
-        function resume(n, v) { try { step(g[n](v)); } catch (e) { settle(q[0][3], e); } }
+        function verb(n) { if (g[n])
+            i[n] = function (v) { return new Promise(function (a, b) { q.push([n, v, a, b]) > 1 || resume(n, v); }); }; }
+        function resume(n, v) { try {
+            step(g[n](v));
+        }
+        catch (e) {
+            settle(q[0][3], e);
+        } }
         function step(r) { r.value instanceof __await ? Promise.resolve(r.value.v).then(fulfill, reject) : settle(q[0][2], r); }
         function fulfill(value) { resume("next", value); }
         function reject(value) { resume("throw", value); }
-        function settle(f, v) { if (f(v), q.shift(), q.length) resume(q[0][0], q[0][1]); }
+        function settle(f, v) { if (f(v), q.shift(), q.length)
+            resume(q[0][0], q[0][1]); }
     }
-
     function __asyncDelegator(o) {
         var i, p;
         return i = {}, verb("next"), verb("throw", function (e) { throw e; }), verb("return"), i[Symbol.iterator] = function () { return this; }, i;
         function verb(n, f) { i[n] = o[n] ? function (v) { return (p = !p) ? { value: __await(o[n](v)), done: n === "return" } : f ? f(v) : v; } : f; }
     }
-
     function __asyncValues(o) {
-        if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+        if (!Symbol.asyncIterator)
+            throw new TypeError("Symbol.asyncIterator is not defined.");
         var m = o[Symbol.asyncIterator], i;
         return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
         function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
-        function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+        function settle(resolve, reject, d, v) { Promise.resolve(v).then(function (v) { resolve({ value: v, done: d }); }, reject); }
     }
-
     function __makeTemplateObject(cooked, raw) {
-        if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+        if (Object.defineProperty) {
+            Object.defineProperty(cooked, "raw", { value: raw });
+        }
+        else {
+            cooked.raw = raw;
+        }
         return cooked;
+    }
+    ;
+    var __setModuleDefault = Object.create ? (function (o, v) {
+        Object.defineProperty(o, "default", { enumerable: true, value: v });
+    }) : function (o, v) {
+        o["default"] = v;
     };
-
     function __importStar(mod) {
-        if (mod && mod.__esModule) return mod;
+        if (mod && mod.__esModule)
+            return mod;
         var result = {};
-        if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-        result.default = mod;
+        if (mod != null)
+            for (var k in mod)
+                if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k))
+                    __createBinding(result, mod, k);
+        __setModuleDefault(result, mod);
         return result;
     }
-
     function __importDefault(mod) {
         return (mod && mod.__esModule) ? mod : { default: mod };
     }
-
     function __classPrivateFieldGet(receiver, privateMap) {
         if (!privateMap.has(receiver)) {
             throw new TypeError("attempted to get private field on non-instance");
         }
         return privateMap.get(receiver);
     }
-
     function __classPrivateFieldSet(receiver, privateMap, value) {
         if (!privateMap.has(receiver)) {
             throw new TypeError("attempted to set private field on non-instance");
@@ -220,7 +307,8 @@
 
     /**
      * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     * Generated from: cfm-list/cfm-list.component.ts
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     /**
      * @record
@@ -236,19 +324,19 @@
         function TdFlavoredListComponent() {
             this.dense = false;
         }
-        TdFlavoredListComponent.decorators = [
-            { type: core.Component, args: [{
-                        selector: 'cfm-list',
-                        template: "<mat-list [attr.dense]=\"dense ? true : null\">\n  <ng-template let-line let-last=\"last\" ngFor [ngForOf]=\"lines\">\n    <mat-list-item>\n      <h4 matLine>\n        {{ line.line }}\n      </h4>\n      <p *ngFor=\"let subline of line.sublines\" matLine>\n        {{ subline }}\n      </p>\n      <mat-divider *ngIf=\"!last\"></mat-divider>\n    </mat-list-item>\n  </ng-template>\n</mat-list>\n",
-                        styles: [""]
-                    }] }
-        ];
-        TdFlavoredListComponent.propDecorators = {
-            lines: [{ type: core.Input }],
-            dense: [{ type: core.Input }]
-        };
         return TdFlavoredListComponent;
     }());
+    TdFlavoredListComponent.decorators = [
+        { type: core.Component, args: [{
+                    selector: 'cfm-list',
+                    template: "<mat-list [attr.dense]=\"dense ? true : null\">\n  <ng-template let-line let-last=\"last\" ngFor [ngForOf]=\"lines\">\n    <mat-list-item>\n      <h4 matLine>\n        {{ line.line }}\n      </h4>\n      <p *ngFor=\"let subline of line.sublines\" matLine>\n        {{ subline }}\n      </p>\n      <mat-divider *ngIf=\"!last\"></mat-divider>\n    </mat-list-item>\n  </ng-template>\n</mat-list>\n",
+                    styles: [""]
+                }] }
+    ];
+    TdFlavoredListComponent.propDecorators = {
+        lines: [{ type: core.Input }],
+        dense: [{ type: core.Input }]
+    };
     if (false) {
         /** @type {?} */
         TdFlavoredListComponent.prototype.lines;
@@ -256,10 +344,6 @@
         TdFlavoredListComponent.prototype.dense;
     }
 
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
-     */
     /**
      * @record
      */
@@ -280,25 +364,22 @@
         /**
          * @return {?}
          */
-        TdFlavoredMarkdownButtonComponent.prototype.emitClick = /**
-         * @return {?}
-         */
-        function () {
+        TdFlavoredMarkdownButtonComponent.prototype.emitClick = function () {
             this.clicked.emit({ text: this.text, data: this.data });
-        };
-        TdFlavoredMarkdownButtonComponent.decorators = [
-            { type: core.Component, args: [{
-                        template: "\n    <button mat-raised-button (click)=\"emitClick()\">\n      {{ text }}\n    </button>\n  "
-                    }] }
-        ];
-        TdFlavoredMarkdownButtonComponent.propDecorators = {
-            display: [{ type: core.HostBinding, args: ['style.display',] }],
-            text: [{ type: core.Input }],
-            data: [{ type: core.Input }],
-            clicked: [{ type: core.Output }]
         };
         return TdFlavoredMarkdownButtonComponent;
     }());
+    TdFlavoredMarkdownButtonComponent.decorators = [
+        { type: core.Component, args: [{
+                    template: "\n    <button mat-raised-button (click)=\"emitClick()\">\n      {{ text }}\n    </button>\n  "
+                }] }
+    ];
+    TdFlavoredMarkdownButtonComponent.propDecorators = {
+        display: [{ type: core.HostBinding, args: ['style.display',] }],
+        text: [{ type: core.Input }],
+        data: [{ type: core.Input }],
+        clicked: [{ type: core.Output }]
+    };
     if (false) {
         /** @type {?} */
         TdFlavoredMarkdownButtonComponent.prototype.display;
@@ -310,6 +391,10 @@
         TdFlavoredMarkdownButtonComponent.prototype.clicked;
     }
     var TdFlavoredMarkdownContainerDirective = /** @class */ (function () {
+        /**
+         * @param {?} viewContainerRef
+         * @param {?} _renderer
+         */
         function TdFlavoredMarkdownContainerDirective(viewContainerRef, _renderer) {
             this.viewContainerRef = viewContainerRef;
             this._renderer = _renderer;
@@ -317,25 +402,22 @@
         /**
          * @return {?}
          */
-        TdFlavoredMarkdownContainerDirective.prototype.clear = /**
-         * @return {?}
-         */
-        function () {
+        TdFlavoredMarkdownContainerDirective.prototype.clear = function () {
             this._renderer.setProperty(this.viewContainerRef.element.nativeElement, 'innerHTML', '');
             this.viewContainerRef.clear();
         };
-        TdFlavoredMarkdownContainerDirective.decorators = [
-            { type: core.Directive, args: [{
-                        selector: '[tdFlavoredMarkdownContainer]',
-                    },] }
-        ];
-        /** @nocollapse */
-        TdFlavoredMarkdownContainerDirective.ctorParameters = function () { return [
-            { type: core.ViewContainerRef },
-            { type: core.Renderer2 }
-        ]; };
         return TdFlavoredMarkdownContainerDirective;
     }());
+    TdFlavoredMarkdownContainerDirective.decorators = [
+        { type: core.Directive, args: [{
+                    selector: '[tdFlavoredMarkdownContainer]',
+                },] }
+    ];
+    /** @nocollapse */
+    TdFlavoredMarkdownContainerDirective.ctorParameters = function () { return [
+        { type: core.ViewContainerRef },
+        { type: core.Renderer2 }
+    ]; };
     if (false) {
         /** @type {?} */
         TdFlavoredMarkdownContainerDirective.prototype.viewContainerRef;
@@ -346,6 +428,13 @@
         TdFlavoredMarkdownContainerDirective.prototype._renderer;
     }
     var TdFlavoredMarkdownComponent = /** @class */ (function () {
+        /**
+         * @param {?} _componentFactoryResolver
+         * @param {?} _renderer
+         * @param {?} _changeDetectorRef
+         * @param {?} _injector
+         * @param {?} _elementRef
+         */
         function TdFlavoredMarkdownComponent(_componentFactoryResolver, _renderer, _changeDetectorRef, _injector, _elementRef) {
             this._componentFactoryResolver = _componentFactoryResolver;
             this._renderer = _renderer;
@@ -387,20 +476,13 @@
              * Markdown format content to be parsed as material/covalent markup.
              *
              * e.g. README.md content.
-             */
-            set: /**
-             * content?: string
-             *
-             * Markdown format content to be parsed as material/covalent markup.
-             *
-             * e.g. README.md content.
              * @param {?} content
              * @return {?}
              */
-            function (content) {
+            set: function (content) {
                 this._content = content;
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         Object.defineProperty(TdFlavoredMarkdownComponent.prototype, "simpleLineBreaks", {
@@ -409,19 +491,13 @@
              *
              * Sets whether newline characters inside paragraphs and spans are parsed as <br/>.
              * Defaults to false.
-             */
-            set: /**
-             * simpleLineBreaks?: string
-             *
-             * Sets whether newline characters inside paragraphs and spans are parsed as <br/>.
-             * Defaults to false.
              * @param {?} simpleLineBreaks
              * @return {?}
              */
-            function (simpleLineBreaks) {
+            set: function (simpleLineBreaks) {
                 this._simpleLineBreaks = simpleLineBreaks;
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         Object.defineProperty(TdFlavoredMarkdownComponent.prototype, "hostedUrl", {
@@ -430,19 +506,13 @@
              *
              * If markdown contains relative paths, this is required to generate correct urls
              *
-             */
-            set: /**
-             * hostedUrl?: string
-             *
-             * If markdown contains relative paths, this is required to generate correct urls
-             *
              * @param {?} hostedUrl
              * @return {?}
              */
-            function (hostedUrl) {
+            set: function (hostedUrl) {
                 this._hostedUrl = hostedUrl;
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         Object.defineProperty(TdFlavoredMarkdownComponent.prototype, "anchor", {
@@ -451,30 +521,20 @@
              *
              * Anchor to jump to
              *
-             */
-            set: /**
-             * anchor?: string
-             *
-             * Anchor to jump to
-             *
              * @param {?} anchor
              * @return {?}
              */
-            function (anchor) {
+            set: function (anchor) {
                 this._anchor = anchor;
             },
-            enumerable: true,
+            enumerable: false,
             configurable: true
         });
         /**
          * @param {?} changes
          * @return {?}
          */
-        TdFlavoredMarkdownComponent.prototype.ngOnChanges = /**
-         * @param {?} changes
-         * @return {?}
-         */
-        function (changes) {
+        TdFlavoredMarkdownComponent.prototype.ngOnChanges = function (changes) {
             // only anchor changed
             if (changes.anchor && !changes.content && !changes.simpleLineBreaks && !changes.hostedUrl) {
                 markdown.scrollToAnchor(this._elementRef.nativeElement, this._anchor, false);
@@ -486,17 +546,13 @@
         /**
          * @return {?}
          */
-        TdFlavoredMarkdownComponent.prototype.ngAfterViewInit = /**
-         * @return {?}
-         */
-        function () {
+        TdFlavoredMarkdownComponent.prototype.ngAfterViewInit = function () {
             var _this = this;
             if (!this._content) {
-                this._loadContent(((/** @type {?} */ (this.container.viewContainerRef.element.nativeElement))).textContent);
-                Promise.resolve().then((/**
+                this._loadContent((( /** @type {?} */(this.container.viewContainerRef.element.nativeElement))).textContent);
+                Promise.resolve().then(( /**
                  * @return {?}
-                 */
-                function () {
+                 */function () {
                     _this._viewInit = true;
                     _this._changeDetectorRef.markForCheck();
                 }));
@@ -505,15 +561,12 @@
         /**
          * @return {?}
          */
-        TdFlavoredMarkdownComponent.prototype.refresh = /**
-         * @return {?}
-         */
-        function () {
+        TdFlavoredMarkdownComponent.prototype.refresh = function () {
             if (this._content) {
                 this._loadContent(this._content);
             }
             else if (this._viewInit) {
-                this._loadContent(((/** @type {?} */ (this.container.viewContainerRef.element.nativeElement))).textContent);
+                this._loadContent((( /** @type {?} */(this.container.viewContainerRef.element.nativeElement))).textContent);
             }
             this._changeDetectorRef.markForCheck();
         };
@@ -522,12 +575,7 @@
          * @param {?} markdown
          * @return {?}
          */
-        TdFlavoredMarkdownComponent.prototype._loadContent = /**
-         * @private
-         * @param {?} markdown
-         * @return {?}
-         */
-        function (markdown$1) {
+        TdFlavoredMarkdownComponent.prototype._loadContent = function (markdown$1) {
             var _this = this;
             if (markdown$1 && markdown$1.trim().length > 0) {
                 this.container.clear();
@@ -541,11 +589,10 @@
                 // Remove all indentation spaces so markdown can be parsed correctly
                 /** @type {?} */
                 var startingWhitespaceRegex_1 = new RegExp('^' + firstLineWhitespace);
-                lines = lines.map((/**
+                lines = lines.map(( /**
                  * @param {?} line
                  * @return {?}
-                 */
-                function (line) {
+                 */function (line) {
                     return line.replace(startingWhitespaceRegex_1, '');
                 }));
                 // Join lines again with line characters
@@ -558,25 +605,22 @@
                 /** @type {?} */
                 var keys = Object.keys(this._components);
                 // need to sort the placeholders in order of encounter in markdown content
-                keys.sort((/**
+                keys.sort(( /**
                  * @param {?} compA
                  * @param {?} compB
                  * @return {?}
-                 */
-                function (compA, compB) {
+                 */function (compA, compB) {
                     return markdown$1.indexOf(compA) > markdown$1.indexOf(compB) ? 1 : -1;
                 }));
                 this._render(markdown$1, keys[0], keys);
                 // TODO: timeout required since resizing of html elements occurs which causes a change in the scroll position
-                setTimeout((/**
+                setTimeout(( /**
                  * @return {?}
-                 */
-                function () { return markdown.scrollToAnchor(_this._elementRef.nativeElement, _this._anchor, false); }), 250);
+                 */function () { return markdown.scrollToAnchor(_this._elementRef.nativeElement, _this._anchor, false); }), 250);
                 this.contentReady.emit();
-                Promise.resolve().then((/**
+                Promise.resolve().then(( /**
                  * @return {?}
-                 */
-                function () {
+                 */function () {
                     _this._changeDetectorRef.markForCheck();
                 }));
             }
@@ -588,14 +632,7 @@
          * @param {?} keys
          * @return {?}
          */
-        TdFlavoredMarkdownComponent.prototype._render = /**
-         * @private
-         * @param {?} markdown
-         * @param {?} key
-         * @param {?} keys
-         * @return {?}
-         */
-        function (markdown$1, key, keys) {
+        TdFlavoredMarkdownComponent.prototype._render = function (markdown$1, key, keys) {
             if (!markdown$1) {
                 return;
             }
@@ -630,24 +667,14 @@
          * @param {?} replacerFunc
          * @return {?}
          */
-        TdFlavoredMarkdownComponent.prototype._replaceComponent = /**
-         * @private
-         * @template T
-         * @param {?} markdown
-         * @param {?} type
-         * @param {?} regExp
-         * @param {?} replacerFunc
-         * @return {?}
-         */
-        function (markdown, type, regExp, replacerFunc) {
+        TdFlavoredMarkdownComponent.prototype._replaceComponent = function (markdown, type, regExp, replacerFunc) {
             var _this = this;
             /** @type {?} */
             var componentIndex = 0;
-            return markdown.replace(regExp, (/**
+            return markdown.replace(regExp, ( /**
              * @param {...?} args
              * @return {?}
-             */
-            function () {
+             */function () {
                 var args = [];
                 for (var _i = 0; _i < arguments.length; _i++) {
                     args[_i] = arguments[_i];
@@ -668,27 +695,21 @@
          * @param {?} markdown
          * @return {?}
          */
-        TdFlavoredMarkdownComponent.prototype._replaceCheckbox = /**
-         * @private
-         * @param {?} markdown
-         * @return {?}
-         */
-        function (markdown) {
+        TdFlavoredMarkdownComponent.prototype._replaceCheckbox = function (markdown) {
             var _this = this;
             /** @type {?} */
             var checkboxRegExp = /(?:^|\n)- \[(x| )\](.*)/gi;
-            return this._replaceComponent(markdown, checkbox.MatCheckbox, checkboxRegExp, (/**
+            return this._replaceComponent(markdown, checkbox.MatCheckbox, checkboxRegExp, ( /**
              * @param {?} componentRef
              * @param {?} match
              * @param {?} checked
              * @param {?} label
              * @return {?}
-             */
-            function (componentRef, match, checked, label) {
+             */function (componentRef, match, checked, label) {
                 componentRef.instance.checked = !!checked.trim();
                 componentRef.instance.disabled = true;
                 componentRef.instance.labelPosition = 'after';
-                _this._renderer.setProperty(((/** @type {?} */ (componentRef.instance._elementRef.nativeElement))).getElementsByClassName('mat-checkbox-label')[0], 'innerHTML', label);
+                _this._renderer.setProperty((( /** @type {?} */(componentRef.instance._elementRef.nativeElement))).getElementsByClassName('mat-checkbox-label')[0], 'innerHTML', label);
             }));
         };
         /**
@@ -696,23 +717,17 @@
          * @param {?} markdown
          * @return {?}
          */
-        TdFlavoredMarkdownComponent.prototype._replaceButtons = /**
-         * @private
-         * @param {?} markdown
-         * @return {?}
-         */
-        function (markdown) {
+        TdFlavoredMarkdownComponent.prototype._replaceButtons = function (markdown) {
             var _this = this;
             /** @type {?} */
             var buttonRegExp = /\[([^\[]+)\](\(#data=(.*)\))/i;
             /** @type {?} */
             var globalButtonRegExp = new RegExp(buttonRegExp.source, buttonRegExp.flags + 'g');
-            return this._replaceComponent(markdown, TdFlavoredMarkdownButtonComponent, globalButtonRegExp, (/**
+            return this._replaceComponent(markdown, TdFlavoredMarkdownButtonComponent, globalButtonRegExp, ( /**
              * @param {?} componentRef
              * @param {?} match
              * @return {?}
-             */
-            function (componentRef, match) {
+             */function (componentRef, match) {
                 /** @type {?} */
                 var matches = buttonRegExp.exec(match);
                 /** @type {?} */
@@ -721,13 +736,10 @@
                 var data = matches[3];
                 componentRef.instance.text = text;
                 componentRef.instance.data = data;
-                componentRef.instance.clicked.subscribe((/**
+                componentRef.instance.clicked.subscribe(( /**
                  * @param {?} clickEvent
                  * @return {?}
-                 */
-                function (clickEvent) {
-                    return _this.buttonClicked.emit(clickEvent);
-                }));
+                 */function (clickEvent) { return _this.buttonClicked.emit(clickEvent); }));
             }));
         };
         /**
@@ -735,25 +747,19 @@
          * @param {?} markdown
          * @return {?}
          */
-        TdFlavoredMarkdownComponent.prototype._replaceCodeBlocks = /**
-         * @private
-         * @param {?} markdown
-         * @return {?}
-         */
-        function (markdown) {
+        TdFlavoredMarkdownComponent.prototype._replaceCodeBlocks = function (markdown) {
             var _this = this;
             /** @type {?} */
             var codeBlockRegExp = /(?:^|\n)```(.*)\n([\s\S]*?)\n```/g;
-            return this._replaceComponent(markdown, highlight.TdHighlightComponent, codeBlockRegExp, (/**
+            return this._replaceComponent(markdown, highlight.TdHighlightComponent, codeBlockRegExp, ( /**
              * @param {?} componentRef
              * @param {?} match
              * @param {?} language
              * @param {?} codeblock
              * @return {?}
-             */
-            function (componentRef, match, language, codeblock) {
+             */function (componentRef, match, language, codeblock) {
                 if (language) {
-                    componentRef.instance.lang = language;
+                    componentRef.instance.codeLang = language;
                 }
                 componentRef.instance.copyCodeToClipboard = _this.copyCodeToClipboard;
                 componentRef.instance.copyCodeTooltips = _this.copyCodeTooltips;
@@ -765,62 +771,51 @@
          * @param {?} markdown
          * @return {?}
          */
-        TdFlavoredMarkdownComponent.prototype._replaceTables = /**
-         * @private
-         * @param {?} markdown
-         * @return {?}
-         */
-        function (markdown) {
+        TdFlavoredMarkdownComponent.prototype._replaceTables = function (markdown) {
             /** @type {?} */
             var tableRgx = /^ {0,3}\|?.+\|.+\n[ \t]{0,3}\|?[ \t]*:?[ \t]*(?:-|=){2,}[ \t]*:?[ \t]*\|[ \t]*:?[ \t]*(?:-|=){2,}[\s\S]+?(?:\n\n|~0)/gm;
-            return this._replaceComponent(markdown, dataTable.TdDataTableComponent, tableRgx, (/**
+            return this._replaceComponent(markdown, dataTable.TdDataTableComponent, tableRgx, ( /**
              * @param {?} componentRef
              * @param {?} match
              * @return {?}
-             */
-            function (componentRef, match) {
+             */function (componentRef, match) {
                 /** @type {?} */
                 var dataTableLines = match.replace(/(\s|\t)*\n+(\s|\t)*$/g, '').split('\n');
                 /** @type {?} */
                 var columns = dataTableLines[0]
                     .split('|')
-                    .filter((/**
-                 * @param {?} col
-                 * @return {?}
-                 */
-                function (col) {
+                    .filter(( /**
+             * @param {?} col
+             * @return {?}
+             */function (col) {
                     return col;
                 }))
-                    .map((/**
-                 * @param {?} s
-                 * @return {?}
-                 */
-                function (s) {
+                    .map(( /**
+             * @param {?} s
+             * @return {?}
+             */function (s) {
                     return s.trim();
                 }));
                 /** @type {?} */
                 var alignment = dataTableLines[1]
                     .split('|')
-                    .filter((/**
-                 * @param {?} v
-                 * @return {?}
-                 */
-                function (v) {
+                    .filter(( /**
+             * @param {?} v
+             * @return {?}
+             */function (v) {
                     return v;
                 }))
-                    .map((/**
-                 * @param {?} s
-                 * @return {?}
-                 */
-                function (s) {
+                    .map(( /**
+             * @param {?} s
+             * @return {?}
+             */function (s) {
                     return s.trim();
                 }));
-                componentRef.instance.columns = columns.map((/**
+                componentRef.instance.columns = columns.map(( /**
                  * @param {?} col
                  * @param {?} index
                  * @return {?}
-                 */
-                function (col, index) {
+                 */function (col, index) {
                     /** @type {?} */
                     var widths = alignment[index].split('---');
                     /** @type {?} */
@@ -851,37 +846,33 @@
                     /** @type {?} */
                     var rowSplit = dataTableLines[i]
                         .split('|')
-                        .filter((/**
-                     * @param {?} cell
-                     * @return {?}
-                     */
-                    function (cell) {
+                        .filter(( /**
+                 * @param {?} cell
+                 * @return {?}
+                 */function (cell) {
                         return cell;
                     }))
-                        .map((/**
-                     * @param {?} s
-                     * @return {?}
-                     */
-                    function (s) {
+                        .map(( /**
+                 * @param {?} s
+                 * @return {?}
+                 */function (s) {
                         return s.trim();
                     }));
                     /** @type {?} */
                     var row = {};
-                    columns.forEach((/**
+                    columns.forEach(( /**
                      * @param {?} col
                      * @param {?} index
                      * @return {?}
-                     */
-                    function (col, index) {
+                     */function (col, index) {
                         /** @type {?} */
                         var rowSplitCell = rowSplit[index];
                         if (rowSplitCell) {
-                            row[col.toLowerCase().trim()] = rowSplitCell.replace(/`(.*)`/, (/**
+                            row[col.toLowerCase().trim()] = rowSplitCell.replace(/`(.*)`/, ( /**
                              * @param {?} m
                              * @param {?} value
                              * @return {?}
-                             */
-                            function (m, value) {
+                             */function (m, value) {
                                 return value;
                             }));
                         }
@@ -893,17 +884,15 @@
                 }
                 componentRef.instance.data = data;
                 componentRef.instance.sortable = true;
-                componentRef.instance.sortChange.subscribe((/**
+                componentRef.instance.sortChange.subscribe(( /**
                  * @param {?} event
                  * @return {?}
-                 */
-                function (event) {
-                    componentRef.instance.data.sort((/**
+                 */function (event) {
+                    componentRef.instance.data.sort(( /**
                      * @param {?} a
                      * @param {?} b
                      * @return {?}
-                     */
-                    function (a, b) {
+                     */function (a, b) {
                         /** @type {?} */
                         var compA = a[event.name];
                         /** @type {?} */
@@ -925,10 +914,9 @@
                     }));
                     componentRef.instance.refresh();
                 }));
-                setTimeout((/**
+                setTimeout(( /**
                  * @return {?}
-                 */
-                function () {
+                 */function () {
                     componentRef.instance.refresh();
                 }));
             }));
@@ -938,40 +926,32 @@
          * @param {?} markdown
          * @return {?}
          */
-        TdFlavoredMarkdownComponent.prototype._replaceLists = /**
-         * @private
-         * @param {?} markdown
-         * @return {?}
-         */
-        function (markdown) {
+        TdFlavoredMarkdownComponent.prototype._replaceLists = function (markdown) {
             /** @type {?} */
             var listRegExp = /(?:^|\n)(( *\+)[ |\t](.*)\n)+/g;
-            return this._replaceComponent(markdown, TdFlavoredListComponent, listRegExp, (/**
+            return this._replaceComponent(markdown, TdFlavoredListComponent, listRegExp, ( /**
              * @param {?} componentRef
              * @param {?} match
              * @return {?}
-             */
-            function (componentRef, match) {
+             */function (componentRef, match) {
                 /** @type {?} */
                 var lineTexts = match.split(new RegExp('\\n {' + (match.indexOf('+') - 1).toString() + '}\\+[ |\\t]'));
                 lineTexts.shift();
                 /** @type {?} */
                 var lines = [];
-                lineTexts.forEach((/**
+                lineTexts.forEach(( /**
                  * @param {?} text
                  * @param {?} index
                  * @return {?}
-                 */
-                function (text, index) {
+                 */function (text, index) {
                     /** @type {?} */
                     var sublineTexts = text.split(/\n *\+ /);
                     lines.push({
                         line: sublineTexts.shift(),
-                        sublines: sublineTexts.map((/**
+                        sublines: sublineTexts.map(( /**
                          * @param {?} subline
                          * @return {?}
-                         */
-                        function (subline) {
+                         */function (subline) {
                             return subline.trim();
                         })),
                     });
@@ -979,35 +959,35 @@
                 componentRef.instance.lines = lines;
             }));
         };
-        TdFlavoredMarkdownComponent.decorators = [
-            { type: core.Component, args: [{
-                        selector: 'td-flavored-markdown',
-                        template: "<div tdFlavoredMarkdownContainer>\n  <ng-content></ng-content>\n</div>\n",
-                        changeDetection: core.ChangeDetectionStrategy.OnPush,
-                        styles: [":host ::ng-deep td-markdown:first-of-type>div:first-of-type>h1:first-of-type,:host ::ng-deep td-markdown:first-of-type>div:first-of-type>h2:first-of-type{margin-top:0}:host ::ng-deep mat-checkbox,:host ::ng-deep td-data-table{display:block}:host ::ng-deep mat-checkbox:last-of-type,:host ::ng-deep td-data-table,:host ::ng-deep td-highlight{margin-bottom:16px}:host ::ng-deep :not(pre)>code{font-family:Menlo,Monaco,\"Andale Mono\",\"lucida console\",\"Courier New\",monospace;padding-left:2px;padding-right:2px}:host ::ng-deep td-highlight{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-pack:justify;justify-content:space-between}"]
-                    }] }
-        ];
-        /** @nocollapse */
-        TdFlavoredMarkdownComponent.ctorParameters = function () { return [
-            { type: core.ComponentFactoryResolver },
-            { type: core.Renderer2 },
-            { type: core.ChangeDetectorRef },
-            { type: core.Injector },
-            { type: core.ElementRef }
-        ]; };
-        TdFlavoredMarkdownComponent.propDecorators = {
-            content: [{ type: core.Input, args: ['content',] }],
-            simpleLineBreaks: [{ type: core.Input, args: ['simpleLineBreaks',] }],
-            hostedUrl: [{ type: core.Input, args: ['hostedUrl',] }],
-            anchor: [{ type: core.Input, args: ['anchor',] }],
-            copyCodeToClipboard: [{ type: core.Input }],
-            copyCodeTooltips: [{ type: core.Input }],
-            contentReady: [{ type: core.Output }],
-            buttonClicked: [{ type: core.Output }],
-            container: [{ type: core.ViewChild, args: [TdFlavoredMarkdownContainerDirective, { static: true },] }]
-        };
         return TdFlavoredMarkdownComponent;
     }());
+    TdFlavoredMarkdownComponent.decorators = [
+        { type: core.Component, args: [{
+                    selector: 'td-flavored-markdown',
+                    template: "<div tdFlavoredMarkdownContainer>\n  <ng-content></ng-content>\n</div>\n",
+                    changeDetection: core.ChangeDetectionStrategy.OnPush,
+                    styles: [":host ::ng-deep td-markdown:first-of-type>div:first-of-type>h1:first-of-type,:host ::ng-deep td-markdown:first-of-type>div:first-of-type>h2:first-of-type{margin-top:0}:host ::ng-deep mat-checkbox,:host ::ng-deep td-data-table{display:block}:host ::ng-deep mat-checkbox:last-of-type,:host ::ng-deep td-data-table,:host ::ng-deep td-highlight{margin-bottom:16px}:host ::ng-deep :not(pre)>code{font-family:Menlo,Monaco,Andale Mono,lucida console,Courier New,monospace;padding-left:2px;padding-right:2px}:host ::ng-deep td-highlight{-ms-flex-direction:row;-ms-flex-pack:justify;display:-ms-flexbox;display:flex;flex-direction:row;justify-content:space-between}"]
+                }] }
+    ];
+    /** @nocollapse */
+    TdFlavoredMarkdownComponent.ctorParameters = function () { return [
+        { type: core.ComponentFactoryResolver },
+        { type: core.Renderer2 },
+        { type: core.ChangeDetectorRef },
+        { type: core.Injector },
+        { type: core.ElementRef }
+    ]; };
+    TdFlavoredMarkdownComponent.propDecorators = {
+        content: [{ type: core.Input, args: ['content',] }],
+        simpleLineBreaks: [{ type: core.Input, args: ['simpleLineBreaks',] }],
+        hostedUrl: [{ type: core.Input, args: ['hostedUrl',] }],
+        anchor: [{ type: core.Input, args: ['anchor',] }],
+        copyCodeToClipboard: [{ type: core.Input }],
+        copyCodeTooltips: [{ type: core.Input }],
+        contentReady: [{ type: core.Output }],
+        buttonClicked: [{ type: core.Output }],
+        container: [{ type: core.ViewChild, args: [TdFlavoredMarkdownContainerDirective, { static: true },] }]
+    };
     if (false) {
         /**
          * @type {?}
@@ -1096,12 +1076,12 @@
         TdFlavoredMarkdownComponent.prototype._elementRef;
     }
 
-    /**
-     * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
-     */
     // TODO: make a td-markdown-loader component
     var TdFlavoredMarkdownLoaderComponent = /** @class */ (function () {
+        /**
+         * @param {?} _changeDetectorRef
+         * @param {?} _markdownUrlLoaderService
+         */
         function TdFlavoredMarkdownLoaderComponent(_changeDetectorRef, _markdownUrlLoaderService) {
             this._changeDetectorRef = _changeDetectorRef;
             this._markdownUrlLoaderService = _markdownUrlLoaderService;
@@ -1135,11 +1115,7 @@
          * @param {?} changes
          * @return {?}
          */
-        TdFlavoredMarkdownLoaderComponent.prototype.ngOnChanges = /**
-         * @param {?} changes
-         * @return {?}
-         */
-        function (changes) {
+        TdFlavoredMarkdownLoaderComponent.prototype.ngOnChanges = function (changes) {
             if (changes.url || changes.httpOptions) {
                 this.loadMarkdown();
             }
@@ -1147,10 +1123,7 @@
         /**
          * @return {?}
          */
-        TdFlavoredMarkdownLoaderComponent.prototype.loadMarkdown = /**
-         * @return {?}
-         */
-        function () {
+        TdFlavoredMarkdownLoaderComponent.prototype.loadMarkdown = function () {
             return __awaiter(this, void 0, void 0, function () {
                 var _a, error_1;
                 return __generator(this, function (_b) {
@@ -1179,31 +1152,31 @@
                 });
             });
         };
-        TdFlavoredMarkdownLoaderComponent.decorators = [
-            { type: core.Component, args: [{
-                        selector: 'td-flavored-markdown-loader',
-                        template: "<mat-progress-bar\n  [ngClass]=\"'delay'\"\n  *ngIf=\"loading\"\n  mode=\"indeterminate\"\n  color=\"accent\"\n  class=\"sticky\"\n></mat-progress-bar>\n<td-flavored-markdown\n  *ngIf=\"!loading\"\n  [content]=\"content\"\n  [hostedUrl]=\"url\"\n  [anchor]=\"anchor\"\n  [copyCodeToClipboard]=\"copyCodeToClipboard\"\n  [copyCodeTooltips]=\"copyCodeTooltips\"\n  (contentReady)=\"contentReady.emit()\"\n  (buttonClicked)=\"buttonClicked.emit($event)\"\n></td-flavored-markdown>\n",
-                        changeDetection: core.ChangeDetectionStrategy.OnPush,
-                        styles: [":host{display:block}.sticky{position:absolute;top:0}.delay{-webkit-animation:.6s delayAnimation;animation:.6s delayAnimation}@-webkit-keyframes delayAnimation{0%,99%{opacity:0}100%{opacity:1}}@keyframes delayAnimation{0%,99%{opacity:0}100%{opacity:1}}"]
-                    }] }
-        ];
-        /** @nocollapse */
-        TdFlavoredMarkdownLoaderComponent.ctorParameters = function () { return [
-            { type: core.ChangeDetectorRef },
-            { type: markdown.TdMarkdownLoaderService }
-        ]; };
-        TdFlavoredMarkdownLoaderComponent.propDecorators = {
-            url: [{ type: core.Input }],
-            httpOptions: [{ type: core.Input }],
-            anchor: [{ type: core.Input }],
-            copyCodeToClipboard: [{ type: core.Input }],
-            copyCodeTooltips: [{ type: core.Input }],
-            contentReady: [{ type: core.Output }],
-            loadFailed: [{ type: core.Output }],
-            buttonClicked: [{ type: core.Output }]
-        };
         return TdFlavoredMarkdownLoaderComponent;
     }());
+    TdFlavoredMarkdownLoaderComponent.decorators = [
+        { type: core.Component, args: [{
+                    selector: 'td-flavored-markdown-loader',
+                    template: "<mat-progress-bar\n  [ngClass]=\"'delay'\"\n  *ngIf=\"loading\"\n  mode=\"indeterminate\"\n  color=\"accent\"\n  class=\"sticky\"\n></mat-progress-bar>\n<td-flavored-markdown\n  *ngIf=\"!loading\"\n  [content]=\"content\"\n  [hostedUrl]=\"url\"\n  [anchor]=\"anchor\"\n  [copyCodeToClipboard]=\"copyCodeToClipboard\"\n  [copyCodeTooltips]=\"copyCodeTooltips\"\n  (contentReady)=\"contentReady.emit()\"\n  (buttonClicked)=\"buttonClicked.emit($event)\"\n></td-flavored-markdown>\n",
+                    changeDetection: core.ChangeDetectionStrategy.OnPush,
+                    styles: [":host{display:block}.sticky{position:absolute;top:0}.delay{-webkit-animation:delayAnimation;-webkit-animation-duration:.6s;animation:delayAnimation;animation-duration:.6s}@-webkit-keyframes delayAnimation{0%{opacity:0}99%{opacity:0}to{opacity:1}}@keyframes delayAnimation{0%{opacity:0}99%{opacity:0}to{opacity:1}}"]
+                }] }
+    ];
+    /** @nocollapse */
+    TdFlavoredMarkdownLoaderComponent.ctorParameters = function () { return [
+        { type: core.ChangeDetectorRef },
+        { type: markdown.TdMarkdownLoaderService }
+    ]; };
+    TdFlavoredMarkdownLoaderComponent.propDecorators = {
+        url: [{ type: core.Input }],
+        httpOptions: [{ type: core.Input }],
+        anchor: [{ type: core.Input }],
+        copyCodeToClipboard: [{ type: core.Input }],
+        copyCodeTooltips: [{ type: core.Input }],
+        contentReady: [{ type: core.Output }],
+        loadFailed: [{ type: core.Output }],
+        buttonClicked: [{ type: core.Output }]
+    };
     if (false) {
         /**
          * url: string
@@ -1270,35 +1243,54 @@
 
     /**
      * @fileoverview added by tsickle
-     * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     * Generated from: flavored-markdown.module.ts
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
      */
     var CovalentFlavoredMarkdownModule = /** @class */ (function () {
         function CovalentFlavoredMarkdownModule() {
         }
-        CovalentFlavoredMarkdownModule.decorators = [
-            { type: core.NgModule, args: [{
-                        imports: [
-                            common.CommonModule,
-                            checkbox.MatCheckboxModule,
-                            list.MatListModule,
-                            progressBar.MatProgressBarModule,
-                            dataTable.CovalentDataTableModule,
-                            highlight.CovalentHighlightModule,
-                            markdown.CovalentMarkdownModule,
-                            button.MatButtonModule,
-                        ],
-                        declarations: [
-                            TdFlavoredListComponent,
-                            TdFlavoredMarkdownComponent,
-                            TdFlavoredMarkdownContainerDirective,
-                            TdFlavoredMarkdownLoaderComponent,
-                            TdFlavoredMarkdownButtonComponent,
-                        ],
-                        exports: [TdFlavoredMarkdownComponent, TdFlavoredMarkdownLoaderComponent],
-                    },] }
-        ];
         return CovalentFlavoredMarkdownModule;
     }());
+    CovalentFlavoredMarkdownModule.decorators = [
+        { type: core.NgModule, args: [{
+                    imports: [
+                        common.CommonModule,
+                        checkbox.MatCheckboxModule,
+                        list.MatListModule,
+                        progressBar.MatProgressBarModule,
+                        dataTable.CovalentDataTableModule,
+                        highlight.CovalentHighlightModule,
+                        markdown.CovalentMarkdownModule,
+                        button.MatButtonModule,
+                    ],
+                    declarations: [
+                        TdFlavoredListComponent,
+                        TdFlavoredMarkdownComponent,
+                        TdFlavoredMarkdownContainerDirective,
+                        TdFlavoredMarkdownLoaderComponent,
+                        TdFlavoredMarkdownButtonComponent,
+                    ],
+                    exports: [TdFlavoredMarkdownComponent, TdFlavoredMarkdownLoaderComponent],
+                },] }
+    ];
+
+    /**
+     * @fileoverview added by tsickle
+     * Generated from: public_api.ts
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * @fileoverview added by tsickle
+     * Generated from: index.ts
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
+
+    /**
+     * @fileoverview added by tsickle
+     * Generated from: covalent-flavored-markdown.ts
+     * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+     */
 
     exports.CovalentFlavoredMarkdownModule = CovalentFlavoredMarkdownModule;
     exports.TdFlavoredMarkdownButtonComponent = TdFlavoredMarkdownButtonComponent;

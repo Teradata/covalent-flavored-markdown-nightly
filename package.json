@@ -31,24 +31,22 @@
   ],
   "dependencies": {
     "highlight.js": "^9.13.1",
-    "showdown": "^1.9.1"
+    "showdown": "^1.9.1",
+    "tslib": "^2.0.0"
   },
   "peerDependencies": {
-    "@angular/common": "^8.0.0 || ^9.0.0 || ^10.0.0-0",
-    "@angular/core": "^8.0.0 || ^9.0.0 || ^10.0.0-0",
-    "@angular/cdk": "^8.0.0 || ^9.0.0 || ^10.0.0-0",
-    "@angular/material": "^8.0.0 || ^9.0.0 || ^10.0.0-0",
+    "@angular/common": "^9.0.0 || ^10.0.0-0",
+    "@angular/core": "^9.0.0 || ^10.0.0-0",
+    "@angular/cdk": "^9.0.0 || ^10.0.0-0",
+    "@angular/material": "^9.0.0 || ^10.0.0-0",
     "@covalent/core": "^3.1.0",
     "@covalent/highlight": "^3.1.0",
-    "@covalent/markdown": "^3.1.0",
-    "tslib": "^1.10.0"
+    "@covalent/markdown": "^3.1.0"
   },
   "main": "bundles/covalent-flavored-markdown.umd.js",
-  "module": "fesm5/covalent-flavored-markdown.js",
+  "module": "fesm2015/covalent-flavored-markdown.js",
   "es2015": "fesm2015/covalent-flavored-markdown.js",
-  "esm5": "esm5/covalent-flavored-markdown.js",
   "esm2015": "esm2015/covalent-flavored-markdown.js",
-  "fesm5": "fesm5/covalent-flavored-markdown.js",
   "fesm2015": "fesm2015/covalent-flavored-markdown.js",
   "typings": "covalent-flavored-markdown.d.ts",
   "metadata": "covalent-flavored-markdown.metadata.json",

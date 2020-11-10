@@ -11,7 +11,8 @@ import { MatButtonModule } from '@angular/material/button';
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: cfm-list/cfm-list.component.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * @record
@@ -48,7 +49,8 @@ if (false) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: flavored-markdown.component.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 /**
  * @record
@@ -451,7 +453,7 @@ class TdFlavoredMarkdownComponent {
          */
         (componentRef, match, language, codeblock) => {
             if (language) {
-                componentRef.instance.lang = language;
+                componentRef.instance.codeLang = language;
             }
             componentRef.instance.copyCodeToClipboard = this.copyCodeToClipboard;
             componentRef.instance.copyCodeTooltips = this.copyCodeTooltips;
@@ -670,7 +672,7 @@ TdFlavoredMarkdownComponent.decorators = [
                 selector: 'td-flavored-markdown',
                 template: "<div tdFlavoredMarkdownContainer>\n  <ng-content></ng-content>\n</div>\n",
                 changeDetection: ChangeDetectionStrategy.OnPush,
-                styles: [":host ::ng-deep td-markdown:first-of-type>div:first-of-type>h1:first-of-type,:host ::ng-deep td-markdown:first-of-type>div:first-of-type>h2:first-of-type{margin-top:0}:host ::ng-deep mat-checkbox,:host ::ng-deep td-data-table{display:block}:host ::ng-deep mat-checkbox:last-of-type,:host ::ng-deep td-data-table,:host ::ng-deep td-highlight{margin-bottom:16px}:host ::ng-deep :not(pre)>code{font-family:Menlo,Monaco,\"Andale Mono\",\"lucida console\",\"Courier New\",monospace;padding-left:2px;padding-right:2px}:host ::ng-deep td-highlight{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-pack:justify;justify-content:space-between}"]
+                styles: [":host ::ng-deep td-markdown:first-of-type>div:first-of-type>h1:first-of-type,:host ::ng-deep td-markdown:first-of-type>div:first-of-type>h2:first-of-type{margin-top:0}:host ::ng-deep mat-checkbox,:host ::ng-deep td-data-table{display:block}:host ::ng-deep mat-checkbox:last-of-type,:host ::ng-deep td-data-table,:host ::ng-deep td-highlight{margin-bottom:16px}:host ::ng-deep :not(pre)>code{font-family:Menlo,Monaco,Andale Mono,lucida console,Courier New,monospace;padding-left:2px;padding-right:2px}:host ::ng-deep td-highlight{-ms-flex-direction:row;-ms-flex-pack:justify;display:-ms-flexbox;display:flex;flex-direction:row;justify-content:space-between}"]
             }] }
 ];
 /** @nocollapse */
@@ -782,7 +784,8 @@ if (false) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: flavored-markdown-loader/flavored-markdown-loader.component.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 // TODO: make a td-markdown-loader component
 class TdFlavoredMarkdownLoaderComponent {
@@ -853,7 +856,7 @@ TdFlavoredMarkdownLoaderComponent.decorators = [
                 selector: 'td-flavored-markdown-loader',
                 template: "<mat-progress-bar\n  [ngClass]=\"'delay'\"\n  *ngIf=\"loading\"\n  mode=\"indeterminate\"\n  color=\"accent\"\n  class=\"sticky\"\n></mat-progress-bar>\n<td-flavored-markdown\n  *ngIf=\"!loading\"\n  [content]=\"content\"\n  [hostedUrl]=\"url\"\n  [anchor]=\"anchor\"\n  [copyCodeToClipboard]=\"copyCodeToClipboard\"\n  [copyCodeTooltips]=\"copyCodeTooltips\"\n  (contentReady)=\"contentReady.emit()\"\n  (buttonClicked)=\"buttonClicked.emit($event)\"\n></td-flavored-markdown>\n",
                 changeDetection: ChangeDetectionStrategy.OnPush,
-                styles: [":host{display:block}.sticky{position:absolute;top:0}.delay{-webkit-animation:.6s delayAnimation;animation:.6s delayAnimation}@-webkit-keyframes delayAnimation{0%,99%{opacity:0}100%{opacity:1}}@keyframes delayAnimation{0%,99%{opacity:0}100%{opacity:1}}"]
+                styles: [":host{display:block}.sticky{position:absolute;top:0}.delay{-webkit-animation:delayAnimation;-webkit-animation-duration:.6s;animation:delayAnimation;animation-duration:.6s}@-webkit-keyframes delayAnimation{0%{opacity:0}99%{opacity:0}to{opacity:1}}@keyframes delayAnimation{0%{opacity:0}99%{opacity:0}to{opacity:1}}"]
             }] }
 ];
 /** @nocollapse */
@@ -937,7 +940,8 @@ if (false) {
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: flavored-markdown.module.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class CovalentFlavoredMarkdownModule {
 }
@@ -966,17 +970,20 @@ CovalentFlavoredMarkdownModule.decorators = [
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: public_api.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: index.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 /**
  * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ * Generated from: covalent-flavored-markdown.ts
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 export { CovalentFlavoredMarkdownModule, TdFlavoredMarkdownButtonComponent, TdFlavoredMarkdownComponent, TdFlavoredMarkdownContainerDirective, TdFlavoredMarkdownLoaderComponent, TdFlavoredListComponent as ɵa };
