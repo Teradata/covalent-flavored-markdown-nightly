@@ -1,6 +1,6 @@
 {
   "name": "@covalent/flavored-markdown",
-  "version": "3.1.0",
+  "version": "3.1.1-beta.1",
   "description": "Teradata UI Platform Flavored Markdown Module",
   "keywords": [
     "angular",
@@ -39,9 +39,9 @@
     "@angular/core": "^9.0.0 || ^10.0.0-0",
     "@angular/cdk": "^9.0.0 || ^10.0.0-0",
     "@angular/material": "^9.0.0 || ^10.0.0-0",
-    "@covalent/core": "^3.1.0",
-    "@covalent/highlight": "^3.1.0",
-    "@covalent/markdown": "^3.1.0"
+    "@covalent/core": "^3.1.1-beta.1",
+    "@covalent/highlight": "^3.1.1-beta.1",
+    "@covalent/markdown": "^3.1.1-beta.1"
   },
   "main": "bundles/covalent-flavored-markdown.umd.js",
   "module": "fesm2015/covalent-flavored-markdown.js",
